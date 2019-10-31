@@ -35,7 +35,7 @@
 #include <hardware/power.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
-#include <vendor/lineage/power/1.0/ILineagePower.h>
+//#include <vendor/lineage/power/1.0/ILineagePower.h>
 
 namespace android {
 namespace hardware {
@@ -49,10 +49,10 @@ using PowerHint_1_2 = ::android::hardware::power::V1_2::PowerHint;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::hardware::power::V1_2::IPower;
-using ::vendor::lineage::power::V1_0::ILineagePower;
-using ::vendor::lineage::power::V1_0::LineageFeature;
+//using ::vendor::lineage::power::V1_0::ILineagePower;
+//using ::vendor::lineage::power::V1_0::LineageFeature;
 
-struct Power : public IPower, public ILineagePower {
+struct Power : public IPower {
     // Methods from ::android::hardware::power::V1_0::IPower follow.
 
     Power();
@@ -70,7 +70,7 @@ struct Power : public IPower, public ILineagePower {
     Return<void> powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) override;
 
     // Methods from ::vendor::lineage::power::V1_0::ILineagePower follow.
-    Return<int32_t> getFeature(LineageFeature feature) override;
+//    Return<int32_t> getFeature(LineageFeature feature) override;
 };
 
 }  // namespace implementation
